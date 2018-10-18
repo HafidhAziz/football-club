@@ -1,33 +1,39 @@
 package com.homework.mhafidhabdulaziz.football_apps.service
 
-import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import com.homework.mhafidhabdulaziz.football_apps.common.Constants
 
 /**
  * Created by M Hafidh Abdul Aziz on 10/16/2018.
  */
-interface FootBallClubRestApi {
+object FootBallClubRestApi {
 
-    @GET("eventspastleague.php")
-    fun getLastMatchSchedule(@Query("id") id:String) : Call<String>
+    fun getTeams(league: String?): String {
+        return Constants.SERVICE_BASE_URL + "/search_all_teams.php?l=" + league
+    }
 
-    @GET("eventsnextleague.php")
-    fun getNextMatchSchedule(@Query("id") id:String) : Call<String>
+    fun getLastMatchSchedule(id: String?): String {
+        return Constants.SERVICE_BASE_URL + "/eventspastleague.php?id=" + id
+    }
 
-    @GET("lookupteam.php")
-    fun getTeamDetail(@Query("id") id:String) : Call<String>
+    fun getNextMatchSchedule(id: String?): String {
+        return Constants.SERVICE_BASE_URL + "/eventsnextleague.php?id=" + id
+    }
 
-    @GET("lookup_all_teams.php")
-    fun getAllTeams(@Query("id") id:String) : Call<String>
+    fun getMatchEventById(id: String?): String {
+        return Constants.SERVICE_BASE_URL + "/lookupevent.php?id=" + id
+    }
 
-    @GET("lookupplayer.php")
-    fun getPlayerDetail(@Query("id") id:String?) : Call<String>
+    fun getTeamDetail(id: String?): String {
+        return Constants.SERVICE_BASE_URL + "/lookupteam.php?id=" + id
+    }
 
-    @GET("lookup_all_players.php")
-    fun getAllPlayers(@Query("id") id:String?) : Call<String>
-
-    @GET("lookupevent.php")
-    fun getMatchEventById(@Query("id") id:String) : Call<String>
+//    @GET("lookup_all_teams.php")
+//    fun getAllTeams(@Query("id") id:String) : Call<String>
+//
+//    @GET("lookupplayer.php")
+//    fun getPlayerDetail(@Query("id") id:String?) : Call<String>
+//
+//    @GET("lookup_all_players.php")
+//    fun getAllPlayers(@Query("id") id:String?) : Call<String>
 
 }

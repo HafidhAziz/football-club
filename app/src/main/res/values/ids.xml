@@ -3,4 +3,6 @@
     <item name="club_name_id" type="id"/>
     <item name="club_image_id" type="id"/>
     <item name="club_details_id" type="id"/>
+    <item name="team_badge" type="id"/>
+    <item name="team_name" type="id"/>
 </resources>

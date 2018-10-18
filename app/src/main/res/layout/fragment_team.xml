@@ -9,15 +9,10 @@
     <Spinner
         android:id="@+id/league_spinner"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#DCDCDC"/>
+        android:layout_height="50dp"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/last_swipe_layout"
+        android:id="@+id/team_swipe_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,7 +21,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/last_match_recycler"
+                android:id="@+id/team_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
@@ -34,7 +29,7 @@
                 android:scrollbars="none" />
 
             <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/shimmer_last_match_container"
+                android:id="@+id/shimmer_team_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

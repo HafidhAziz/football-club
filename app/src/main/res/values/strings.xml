@@ -56,4 +56,21 @@
     <string name="title_forward">FORWARD</string>
     <string name="title_subtitutes">SUBTITUES</string>
 
+    <string name="title_epl">English Premier League</string>
+    <string name="title_bundesliga">German Bundesliga</string>
+    <string name="title_seriea">Italian Serie A</string>
+    <string name="title_ligue1">French Ligue 1</string>
+    <string name="title_laliga">Spanish La Liga</string>
+    <string name="title_eredivisi">Netherlands Eredivisie</string>
+
+    <array name="league">
+        <item>@string/title_epl</item>
+        <item>@string/title_bundesliga</item>
+        <item>@string/title_seriea</item>
+        <item>@string/title_ligue1</item>
+        <item>@string/title_laliga</item>
+        <item>@string/title_eredivisi</item>
+    </array>
+
+
 </resources>

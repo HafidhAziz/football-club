@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_layout"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fav_swipe_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/fav_match_recycler"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:listDivider="@android:color/black"
-        android:scrollbars="none" />
+        android:layout_height="match_parent">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer_fav_match_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fav_match_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:listDivider="@android:color/black"
+            android:scrollbars="none" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_fav_match_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
-            <include layout="@layout/shimmer_match_schedule" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <include layout="@layout/shimmer_match_schedule" />
+                <include layout="@layout/shimmer_match_schedule" />
 
-            <include layout="@layout/shimmer_match_schedule" />
+                <include layout="@layout/shimmer_match_schedule" />
 
-            <include layout="@layout/shimmer_match_schedule" />
+                <include layout="@layout/shimmer_match_schedule" />
 
-            <include layout="@layout/shimmer_match_schedule" />
+                <include layout="@layout/shimmer_match_schedule" />
 
-            <include layout="@layout/shimmer_match_schedule" />
-        </LinearLayout>
+                <include layout="@layout/shimmer_match_schedule" />
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+                <include layout="@layout/shimmer_match_schedule" />
+            </LinearLayout>
 
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
-</FrameLayout>
+    </FrameLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>
