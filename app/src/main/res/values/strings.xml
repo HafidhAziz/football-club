@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Football Club</string>
+
+    <string name="title_barcelona">Barcelona FC</string>
+    <string name="title_madrid">Real Madrid FC</string>
+    <string name="title_bayern">Bayern Munchen FC</string>
+    <string name="title_mancity">Manchester City FC</string>
+    <string name="title_manunited">Manchester United FC</string>
+    <string name="title_chelsea">Chelsea FC</string>
+    <string name="title_milan">AC Milan FC</string>
+    <string name="title_arsenal">Arsenal FC</string>
+
+    <string-array name="club_name">
+        <item>@string/title_barcelona</item>
+        <item>@string/title_madrid</item>
+        <item>@string/title_bayern</item>
+        <item>@string/title_mancity</item>
+        <item>@string/title_manunited</item>
+        <item>@string/title_chelsea</item>
+        <item>@string/title_milan</item>
+        <item>@string/title_arsenal</item>
+    </string-array>
+
+    <array name="club_image">
+        <item>@drawable/img_barca</item>
+        <item>@drawable/img_madrid</item>
+        <item>@drawable/img_bayern</item>
+        <item>@drawable/img_city</item>
+        <item>@drawable/img_mu</item>
+        <item>@drawable/img_chelsea</item>
+        <item>@drawable/img_acm</item>
+        <item>@drawable/img_arsenal</item>
+    </array>
+
+    <array name="club_details">
+        <item>Barcelona is one of the most widely supported teams in the world, and the club has one of the largest social media following in the world among sports teams.</item>
+        <item>Founded on 6 March 1902 as the Madrid Football Club, the club has traditionally worn a white home kit since inception. The word real is Spanish for royal and was bestowed to the club by King Alfonso XIII in 1920 together with the royal crown in the emblem.</item>
+        <item>FC Bayern was founded in 1900 by 11 football players, led by Franz John. Although Bayern won its first national championship in 1932, the club was not selected for the Bundesliga at its inception in 1963.</item>
+        <item>Manchester City first played in the top-tier of the Football League in 1899 and won their first major honour with the FA Cup in 1904.</item>
+        <item>Manchester United Football Club, commonly known as Man. United or simply United, is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football.</item>
+        <item>Chelsea Football Club is a professional football club in London, England, that competes in the Premier League. Founded in 1905, the club\'s home ground since then has been Stamford Bridge.</item>
+        <item>Associazione Calcio Milan, commonly referred to as A.C. Milan or simply Milan, is a professional football club in Milan, Italy, founded in 1899.</item>
+        <item>Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football.</item>
+    </array>
+
+    <string name="title_last_match">Last Match</string>
+    <string name="title_next_match">Next Match</string>
+    <string name="title_add">Added To Favorite</string>
+    <string name="title_removed">Removed From Favorite</string>
+
+    <string name="title_versus">VS</string>
+    <string name="title_lineup">LINE UP</string>
+    <string name="title_goalkeeper">GOAL KEEPER</string>
+    <string name="title_defender">DEFENDER</string>
+    <string name="title_midfielder">MIDFIELDER</string>
+    <string name="title_forward">FORWARD</string>
+    <string name="title_subtitutes">SUBTITUES</string>
+
+</resources>
