@@ -6,7 +6,7 @@ import com.homework.mhafidhabdulaziz.football_apps.service.entity.TeamsDto
 /**
  * Created by M Hafidh Abdul Aziz on 10/16/2018.
  */
-interface MatchScheduleDetailsView {
+interface MatchScheduleDetailView {
     fun onTeamDetailDataReceived(teamData: TeamsDto, isHomeTeam: Boolean)
     fun onMatchFavoriteDataReceived(favoriteData: List<MatchFavorite>)
 }

@@ -19,10 +19,10 @@ import kotlinx.android.synthetic.main.activity_match_schedule_details.*
 /**
  * Created by M Hafidh Abdul Aziz on 10/16/2018.
  */
-class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailsView {
+class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailView {
 
 
-    lateinit var mPresenter: MatchScheduleDetailsPresenter
+    lateinit var mPresenter: MatchScheduleDetailPresenter
     lateinit var event: Event
     private var isFavorite: Boolean = false
     private var menuItem: Menu? = null
@@ -42,7 +42,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailsVie
 
         val request = FootBallApiRepository()
         val gson = Gson()
-        mPresenter = MatchScheduleDetailsPresenter(this, request, gson)
+        mPresenter = MatchScheduleDetailPresenter(this, request, gson)
         onAttachView()
     }
 
