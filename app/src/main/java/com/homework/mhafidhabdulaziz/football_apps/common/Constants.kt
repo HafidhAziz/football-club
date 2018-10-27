@@ -5,7 +5,7 @@ package com.homework.mhafidhabdulaziz.football_apps.common
  */
 class Constants {
     companion object {
-        val SERVICE_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/"
+        val SERVICE_BASE_URL = "https://www.thesportsdb.com/api/v1/json/1"
         val DEFAULT_LEAGUE_MATCH_ID = ""
     }
 }

@@ -45,6 +45,8 @@
 
     <string name="title_last_match">Last Match</string>
     <string name="title_next_match">Next Match</string>
+    <string name="title_match">Match</string>
+    <string name="title_team">Team</string>
     <string name="title_add">Added To Favorite</string>
     <string name="title_removed">Removed From Favorite</string>
 

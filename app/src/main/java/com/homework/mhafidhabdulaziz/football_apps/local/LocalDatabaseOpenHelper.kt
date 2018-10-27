@@ -27,10 +27,15 @@ class LocalDatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(contex
                 "EVENT_ID" to TEXT + UNIQUE,
                 "HOME_TEAM" to TEXT,
                 "AWAY_TEAM" to TEXT)
+        sqLiteDatabase.createTable("TABLE_TEAM_FAV", true,
+                "ID" to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
+                "TEAM_ID" to TEXT,
+                "URL_TEAM_BADGE" to TEXT)
     }
 
     override fun onUpgrade(sqLiteDatabase: SQLiteDatabase, version: Int, newVersion: Int) {
         sqLiteDatabase.dropTable("TABLE_FAVORITE", true)
+        sqLiteDatabase.dropTable("TABLE_TEAM_FAV", true)
     }
 }
 

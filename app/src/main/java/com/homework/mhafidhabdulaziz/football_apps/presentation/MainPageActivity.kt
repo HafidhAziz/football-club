@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.homework.mhafidhabdulaziz.football_apps.R
 import com.homework.mhafidhabdulaziz.football_apps.presentation.favoritematch.FavoriteListFragment
 import com.homework.mhafidhabdulaziz.football_apps.presentation.lastmatch.MatchScheduleFragment
+import com.homework.mhafidhabdulaziz.football_apps.presentation.teams.TeamFragment
 import kotlinx.android.synthetic.main.main_page_activity.*
 
 
@@ -27,6 +28,11 @@ class MainPageActivity : AppCompatActivity() {
                     if (firstTime || (R.id.action_schedule != getSelectedItem(bottom_tab))) {
                         firstTime = false
                         changeMainFragmentContent(MatchScheduleFragment())
+                    }
+                }
+                R.id.action_club -> {
+                    if (R.id.action_club != getSelectedItem(bottom_tab)) {
+                        changeMainFragmentContent(TeamFragment())
                     }
                 }
                 R.id.action_favorite -> {

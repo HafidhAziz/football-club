@@ -7,8 +7,6 @@ import com.homework.mhafidhabdulaziz.football_apps.service.FootBallClubRestApi
 import com.homework.mhafidhabdulaziz.football_apps.service.entity.MatchScheduleDto
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 /**
  * Created by mhafidhabdulaziz on 14/08/18.

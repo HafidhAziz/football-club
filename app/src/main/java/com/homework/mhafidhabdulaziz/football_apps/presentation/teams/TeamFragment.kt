@@ -61,11 +61,13 @@ class TeamFragment : Fragment(), TeamView {
     override fun showLoading() {
         shimmer_team_container.startShimmer()
         shimmer_team_container.visibility = View.VISIBLE
+        team_recycler.visibility = View.VISIBLE
     }
 
     override fun hideLoading() {
         shimmer_team_container.stopShimmer()
         shimmer_team_container.visibility = View.GONE
+        team_recycler.visibility = View.GONE
     }
 
     override fun onReceivedTeamList(data: List<Team>) {
