@@ -2,9 +2,12 @@ package com.homework.mhafidhabdulaziz.football_apps.presentation.teams
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import com.google.gson.Gson
 import com.homework.mhafidhabdulaziz.football_apps.R
@@ -47,34 +50,49 @@ class TeamFragment : Fragment(), TeamView {
         league_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 leagueName = league_spinner.selectedItem.toString()
-                mPresenter.getTeamList(leagueName)
+                mPresenter.getTeamList(CommonUtils.getSelectedLeague(context!!, leagueName))
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
         team_swipe_layout.onRefresh {
-            mPresenter.getTeamList(leagueName)
+            mPresenter.getTeamList(CommonUtils.getSelectedLeague(context!!, leagueName))
         }
+
+        val mLinearLayoutManager = LinearLayoutManager(activity)
+        val dividerItemDecoration = DividerItemDecoration(context!!, mLinearLayoutManager.orientation)
+        team_recycler.addItemDecoration(dividerItemDecoration)
+        mLinearLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        team_recycler.layoutManager = mLinearLayoutManager
     }
 
     override fun showLoading() {
         shimmer_team_container.startShimmer()
         shimmer_team_container.visibility = View.VISIBLE
-        team_recycler.visibility = View.VISIBLE
+        team_recycler.visibility = View.GONE
     }
 
     override fun hideLoading() {
         shimmer_team_container.stopShimmer()
         shimmer_team_container.visibility = View.GONE
-        team_recycler.visibility = View.GONE
+        team_recycler.visibility = View.VISIBLE
     }
 
-    override fun onReceivedTeamList(data: List<Team>) {
+    override fun onReceivedTeamList(teamData: List<Team>) {
         team_swipe_layout.isRefreshing = false
         teams.clear()
-        teams.addAll(data)
+        teams.addAll(teamData)
         mAdapter.notifyDataSetChanged()
+        runLayoutAnimation()
+    }
+
+    private fun runLayoutAnimation() {
+        val controller = AnimationUtils.loadLayoutAnimation(team_recycler.context, R.anim.layout_slide_from_bottom)
+
+        team_recycler.layoutAnimation = controller
+        team_recycler.adapter?.notifyDataSetChanged()
+        team_recycler.scheduleLayoutAnimation()
     }
 
 }

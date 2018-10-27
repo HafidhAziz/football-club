@@ -18,13 +18,11 @@ class TeamPresenter(private val view: TeamView,
                     private val gson: Gson,
                     private val context: CoroutineContextProvider = CoroutineContextProvider()) {
 
-    fun getTeamList(league: String?) {
+    fun getTeamList(id: String) {
         view.showLoading()
         async(context.main) {
             val data = bg {
-                gson.fromJson(apiRepository
-                        .doRequest(FootBallClubRestApi.getTeams(league)),
-                        TeamsDto::class.java)
+                gson.fromJson(apiRepository.doRequest(FootBallClubRestApi.getTeams(id)), TeamsDto::class.java)
             }
 
             view.onReceivedTeamList(data.await().teams)

@@ -11,6 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#DCDCDC"/>
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/team_swipe_layout"
         android:layout_width="match_parent"

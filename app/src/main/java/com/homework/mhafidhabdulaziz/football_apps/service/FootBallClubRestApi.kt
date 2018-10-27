@@ -7,8 +7,8 @@ import com.homework.mhafidhabdulaziz.football_apps.common.Constants
  */
 object FootBallClubRestApi {
 
-    fun getTeams(league: String?): String {
-        return Constants.SERVICE_BASE_URL + "/search_all_teams.php?l=" + league
+    fun getTeams(id: String?): String {
+        return Constants.SERVICE_BASE_URL + "/lookup_all_teams.php?id=" + id
     }
 
     fun getLastMatchSchedule(id: String?): String {

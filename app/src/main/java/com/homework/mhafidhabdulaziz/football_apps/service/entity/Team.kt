@@ -7,6 +7,7 @@ import kotlinx.android.parcel.Parcelize
 /**
  * Created by M Hafidh Abdul Aziz on 10/16/2018.
  */
+@Parcelize
 data class Team(
         @SerializedName("idLeague") var idLeague: String?,
         @SerializedName("idSoccerXML") var idSoccerXML: String?,
@@ -62,4 +63,4 @@ data class Team(
         @SerializedName("strTwitter") var strTwitter: String?,
         @SerializedName("strWebsite") var strWebsite: String?,
         @SerializedName("strYoutube") var strYoutube: String?
-)
+) : Parcelable

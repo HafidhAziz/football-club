@@ -10,5 +10,5 @@ import com.homework.mhafidhabdulaziz.football_apps.service.entity.Team
 interface TeamView {
     fun showLoading()
     fun hideLoading()
-    fun onReceivedTeamList(data: List<Team>)
+    fun onReceivedTeamList(teamData: List<Team>)
 }
