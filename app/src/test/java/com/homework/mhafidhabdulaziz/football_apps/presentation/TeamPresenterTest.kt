@@ -41,9 +41,9 @@ class TeamPresenterTest {
     fun test_getTeamList(){
         val teams : MutableList<Team> = mutableListOf()
         val response = TeamsDto(teams)
-        val league = "English Premiere League"
-        `when`(gson.fromJson(footBallApiRepository.doRequest(FootBallClubRestApi.getTeams(league)), TeamsDto::class.java)).thenReturn(response)
-        teamPresenter.getTeamList(league)
+        val leagueId = "4328"
+        `when`(gson.fromJson(footBallApiRepository.doRequest(FootBallClubRestApi.getTeams(leagueId)), TeamsDto::class.java)).thenReturn(response)
+        teamPresenter.getTeamList(leagueId)
         verify(view).showLoading()
         verify(view).onReceivedTeamList(teams)
         verify(view).hideLoading()

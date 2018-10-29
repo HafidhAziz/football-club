@@ -27,10 +27,6 @@ object FootBallClubRestApi {
         return Constants.SERVICE_BASE_URL + "/lookupteam.php?id=" + id
     }
 
-    fun getAllTeams(id: String?) : String{
-        return Constants.SERVICE_BASE_URL + "/lookup_all_teams.php?id=" + id
-    }
-
     fun getPlayerDetail(id: String?) : String{
         return Constants.SERVICE_BASE_URL + "/lookupplayer.php?id=" + id
     }
