@@ -1,6 +1,14 @@
 package com.homework.mhafidhabdulaziz.football_apps.presentation.lastmatch
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.CalendarContract
+import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -18,6 +26,7 @@ import com.homework.mhafidhabdulaziz.football_apps.service.FootBallApiRepository
 import com.homework.mhafidhabdulaziz.football_apps.service.entity.Event
 import kotlinx.android.synthetic.main.fragment_last_match_schedule.*
 import org.jetbrains.anko.support.v4.onRefresh
+import java.util.*
 
 /**
  * Created by M Hafidh Abdul Aziz on 10/16/2018.
@@ -37,7 +46,7 @@ class LastMatchScheduleFragment : Fragment(), LastMatchView {
         super.onActivityCreated(savedInstanceState)
         league_spinner.adapter = CommonUtils.getLeagueSpinner(context!!)
 
-        mAdapter = MatchScheduleItemAdapter(matches)
+        mAdapter = MatchScheduleItemAdapter(matches, context!!, false)
         last_match_recycler.adapter = mAdapter
 
         val request = FootBallApiRepository()

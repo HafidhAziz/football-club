@@ -19,7 +19,7 @@ import org.jetbrains.anko.support.v4.onRefresh
 /**
  * Created by M Hafidh Abdul Aziz on 10/27/2018.
  */
-class FavoriteMatchFragment: Fragment(), FavoriteMatchView {
+class FavoriteMatchFragment : Fragment(), FavoriteMatchView {
 
     lateinit var mPresenter: FavoriteMatchPresenter
     lateinit var mAdapter: MatchScheduleItemAdapter
@@ -53,7 +53,7 @@ class FavoriteMatchFragment: Fragment(), FavoriteMatchView {
 
     override fun onFavoriteMatchDataReceived(favMatchData: List<Event>) {
         fav_swipe_layout.isRefreshing = false
-        mAdapter = MatchScheduleItemAdapter(favMatchData.toMutableList())
+        mAdapter = MatchScheduleItemAdapter(favMatchData.toMutableList(), context!!, true)
         fav_match_recycler.adapter = mAdapter
     }
 
