@@ -1,13 +1,14 @@
 package com.homework.mhafidhabdulaziz.football_apps.presentation.teams
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.widget.SearchView
+import android.view.*
 import android.view.animation.AnimationUtils
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import com.google.gson.Gson
 import com.homework.mhafidhabdulaziz.football_apps.R
@@ -17,6 +18,7 @@ import com.homework.mhafidhabdulaziz.football_apps.service.FootBallApiRepository
 import com.homework.mhafidhabdulaziz.football_apps.service.entity.Team
 import kotlinx.android.synthetic.main.fragment_team.*
 import org.jetbrains.anko.support.v4.onRefresh
+
 
 /**
  * Created by M Hafidh Abdul Aziz on 10/18/2018.
@@ -36,7 +38,7 @@ class TeamFragment : Fragment(), TeamView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        setHasOptionsMenu(true)
 
         league_spinner.adapter = CommonUtils.getLeagueSpinner(context!!)
 
@@ -93,6 +95,34 @@ class TeamFragment : Fragment(), TeamView {
         team_recycler.layoutAnimation = controller
         team_recycler.adapter?.notifyDataSetChanged()
         team_recycler.scheduleLayoutAnimation()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.menu_search, menu)
+        val searchView = menu?.findItem(R.id.action_search)?.actionView as SearchView?
+        searchView?.queryHint = getString(R.string.title_search)
+        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(keyword: String): Boolean {
+                mPresenter.searchTeam(keyword)
+                return false
+            }
+
+            override fun onQueryTextChange(keyword: String): Boolean {
+                return false
+            }
+        })
+
+        searchView?.setOnCloseListener {
+            val imm = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            var view = activity?.currentFocus
+            if (view == null) {
+                view = View(activity)
+            }
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+            mPresenter.getTeamList("4328")
+            true
+        }
     }
 
 }

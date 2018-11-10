@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_search_match_schedule.*
  */
 class SearchMatchScheduleActivity : AppCompatActivity(), SearchMatchScheduleView {
 
-    private var matches : MutableList<Event> = mutableListOf()
+    private var matches: MutableList<Event> = mutableListOf()
     lateinit var mPresenter: SearchMatchSchedulePresenter
     lateinit var mAdapter: MatchScheduleItemAdapter
 
@@ -52,28 +52,21 @@ class SearchMatchScheduleActivity : AppCompatActivity(), SearchMatchScheduleView
         menuInflater.inflate(R.menu.menu_search, menu)
         val searchView = menu?.findItem(R.id.action_search)?.actionView as SearchView?
         searchView?.queryHint = getString(R.string.title_search)
-        searchView?.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(keyword: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextChange(keyword: String?): Boolean {
-                if(keyword?.isEmpty()!!){
-                    matches.clear()
-                    mAdapter.notifyDataSetChanged()
-                }else{
-                    mPresenter.searchMatchSchedule(keyword)
-                }
+                mPresenter.searchMatchSchedule(keyword)
                 return false
             }
         })
 
-        searchView?.setOnCloseListener(object: SearchView.OnCloseListener{
-            override fun onClose(): Boolean {
-                finish()
-                return true
-            }
-        })
+        searchView?.setOnCloseListener {
+            finish()
+            true
+        }
 
         return true
     }

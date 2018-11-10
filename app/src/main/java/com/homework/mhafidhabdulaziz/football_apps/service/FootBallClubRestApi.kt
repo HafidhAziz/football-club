@@ -27,16 +27,20 @@ object FootBallClubRestApi {
         return Constants.SERVICE_BASE_URL + "/lookupteam.php?id=" + id
     }
 
-    fun getPlayerDetail(id: String?) : String{
+    fun getPlayerDetail(id: String?): String {
         return Constants.SERVICE_BASE_URL + "/lookupplayer.php?id=" + id
     }
 
-    fun getAllPlayers(id: String?) : String{
+    fun getAllPlayers(id: String?): String {
         return Constants.SERVICE_BASE_URL + "/lookup_all_players.php?id=" + id
     }
 
-    fun searchMatchSchedule(keyword: String?) : String{
+    fun searchMatchSchedule(keyword: String?): String {
         return Constants.SERVICE_BASE_URL + "/searchevents.php?e=" + keyword
+    }
+
+    fun searchTeam(keyword: String?): String {
+        return Constants.SERVICE_BASE_URL + "/searchteams.php?t=" + keyword
     }
 
 }

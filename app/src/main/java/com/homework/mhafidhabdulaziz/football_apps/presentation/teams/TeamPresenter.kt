@@ -29,4 +29,16 @@ class TeamPresenter(private val view: TeamView,
             view.hideLoading()
         }
     }
+
+    fun searchTeam(keyword: String) {
+        view.showLoading()
+        async(context.main) {
+            val data = bg {
+                gson.fromJson(apiRepository.doRequest(FootBallClubRestApi.searchTeam(keyword)), TeamsDto::class.java)
+            }
+
+            view.onReceivedTeamList(data.await().teams)
+            view.hideLoading()
+        }
+    }
 }
