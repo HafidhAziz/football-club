@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.homework.mhafidhabdulaziz.football_apps.R
+import com.homework.mhafidhabdulaziz.football_apps.presentation.teamplayersdetail.TeamPlayersDetailActivity
 import com.homework.mhafidhabdulaziz.football_apps.service.entity.Player
 import kotlinx.android.synthetic.main.item_team_players.view.*
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by M Hafidh Abdul Aziz on 11/10/2018.
@@ -32,7 +34,7 @@ class TeamPlayersItemAdapter(var player: MutableList<Player>) : RecyclerView.Ada
             Glide.with(itemView.context).load(items.strCutout).into(itemView.player_image)
 
             itemView.setOnClickListener {
-                //                itemView.context.startActivity<TeamPlayersDetailActivity>(TeamPlayersDetailActivity.EXTRA_PLAYER to items)
+                itemView.context.startActivity<TeamPlayersDetailActivity>(TeamPlayersDetailActivity.EXTRA_PLAYER to items)
             }
         }
     }
