@@ -28,7 +28,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailView
     private var menuItem: Menu? = null
 
     companion object {
-        val EXTRA_EVENTS = "EXTRA_POSITION"
+        const val EXTRA_EVENTS = "EXTRA_POSITION"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

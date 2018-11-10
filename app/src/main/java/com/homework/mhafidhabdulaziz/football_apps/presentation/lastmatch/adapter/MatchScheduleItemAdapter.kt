@@ -39,7 +39,11 @@ class MatchScheduleItemAdapter(var mData: MutableList<Event>, val context: Conte
                 itemView.add_to_calendar.visibility = View.GONE
             }
             itemView.date_match.text = items.dateEvent.let { CommonUtils.getFormattedDate(it!!) }
-            itemView.time_match.text = items.strTime.let { CommonUtils.getFormattedTime(it) }
+            // 8 to avoid fail parsing time, in some cases of search match , api returns different value with get last and next match
+            if(items.strTime != null && !items.strTime.isEmpty() && items.strTime.length > 8){
+                itemView.time_match.visibility = View.VISIBLE
+                itemView.time_match.text = items.strTime.let { CommonUtils.getFormattedTime(it) }
+            }
             itemView.home_team.text = items.strHomeTeam
             itemView.home_score.text = items.intHomeScore
             itemView.away_team.text = items.strAwayTeam

@@ -35,4 +35,8 @@ object FootBallClubRestApi {
         return Constants.SERVICE_BASE_URL + "/lookup_all_players.php?id=" + id
     }
 
+    fun searchMatchSchedule(keyword: String?) : String{
+        return Constants.SERVICE_BASE_URL + "/searchevents.php?e=" + keyword
+    }
+
 }

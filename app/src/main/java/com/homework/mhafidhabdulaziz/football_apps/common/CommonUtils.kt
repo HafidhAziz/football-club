@@ -3,6 +3,7 @@ package com.homework.mhafidhabdulaziz.football_apps.common
 import android.content.Context
 import android.widget.ArrayAdapter
 import com.homework.mhafidhabdulaziz.football_apps.R
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -16,10 +17,17 @@ object CommonUtils {
     }
 
     fun getFormattedTime(time: String): String {
+        var result = ""
         val inputFormat = SimpleDateFormat("HH:mm:ssZ", Locale("id", "ID"))
         val outputFormat = SimpleDateFormat("h:mm a", Locale("id", "ID"))
-        val date = inputFormat.parse(time)
-        return outputFormat.format(date)
+
+        try {
+            val date = inputFormat.parse(time)
+            result = outputFormat.format(date)
+        }catch (e: ParseException){
+            e.printStackTrace()
+        }
+        return result
     }
 
     fun getSeparator(string: String): String {

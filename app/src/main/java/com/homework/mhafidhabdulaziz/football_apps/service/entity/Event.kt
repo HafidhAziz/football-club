@@ -11,7 +11,7 @@ import java.util.*
 @Parcelize
 data class Event(
         @SerializedName("idEvent") var idEvent: String,
-        @SerializedName("idSoccerXML") var idSoccerXML: String,
+        @SerializedName("idSoccerXML") var idSoccerXML: String?,
         @SerializedName("strEvent") var strEvent: String,
         @SerializedName("strFilename") var strFilename: String,
         @SerializedName("strSport") var strSport: String,
@@ -49,7 +49,7 @@ data class Event(
         @SerializedName("intHomeShots") var intHomeShots: String?,
         @SerializedName("intAwayShots") var intAwayShots: String?,
         @SerializedName("dateEvent") var dateEvent: Date?,
-        @SerializedName("strDate") var strDate: String,
+        @SerializedName("strDate") var strDate: String?,
         @SerializedName("strTime") var strTime: String,
         @SerializedName("strTVStation") var strTVStation: String?,
         @SerializedName("idHomeTeam") var idHomeTeam: String,

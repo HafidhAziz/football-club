@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@android:color/holo_blue_dark"
-                tools:text="17 November 1994"/>
+                tools:text="17 November 1994" />
 
             <TextView
                 android:id="@+id/time_match"
@@ -31,7 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@android:color/holo_blue_dark"
-                tools:text="05:00 PM"/>
+                android:visibility="gone"
+                tools:text="05:00 PM" />
 
         </LinearLayout>
 
@@ -39,9 +40,9 @@
             android:id="@+id/add_to_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:padding="5dp"
-            android:src="@drawable/ic_turn_notifications"
-            android:layout_gravity="end"/>
+            android:src="@drawable/ic_turn_notifications" />
 
         <LinearLayout
             android:layout_width="match_parent"
