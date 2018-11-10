@@ -54,6 +54,8 @@
                     <include layout="@layout/shimmer_match_schedule" />
 
                     <include layout="@layout/shimmer_match_schedule" />
+                    
+                    <include layout="@layout/shimmer_match_schedule" />
 
                 </LinearLayout>
 
