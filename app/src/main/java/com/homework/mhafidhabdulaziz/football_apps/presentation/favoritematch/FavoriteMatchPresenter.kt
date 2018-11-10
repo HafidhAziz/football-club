@@ -1,7 +1,6 @@
 package com.homework.mhafidhabdulaziz.football_apps.presentation.favoritematch
 
 import android.content.Context
-import android.os.Handler
 import com.google.gson.Gson
 import com.homework.mhafidhabdulaziz.football_apps.local.database
 import com.homework.mhafidhabdulaziz.football_apps.local.db.MatchFavorite
@@ -43,11 +42,8 @@ class FavoriteMatchPresenter(private val view: FavoriteMatchView,
                 }
 
                 eventList.add(data.await().events[0])
-//                val handler = Handler()
-//                handler.postDelayed({
-                    view.hideLoading()
-                    view.onFavoriteMatchDataReceived(eventList)
-//                }, 1000)
+                view.hideLoading()
+                view.onFavoriteMatchDataReceived(eventList)
             }
         }
         if (favMatchData.isEmpty()) {

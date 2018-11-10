@@ -42,11 +42,8 @@ class FavoriteTeamPresenter(private val view: FavoriteTeamView,
                 }
 
                 teamList.add(data.await().teams[0])
-//                val handler = Handler()
-//                handler.postDelayed({
                 view.hideLoading()
                 view.onFavoriteTeamDataReceived(teamList)
-//                }, 1000)
             }
         }
         if (favTeamData.isEmpty()) {

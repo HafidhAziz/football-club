@@ -74,5 +74,7 @@
         <item>@string/title_eredivisi</item>
     </array>
 
+    <string name="title_overview">Overview</string>
+    <string name="title_players">Players</string>
 
 </resources>

@@ -29,6 +29,12 @@
         <activity
             android:name=".presentation.matchdetail.MatchScheduleDetailActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.teamDetail.TeamDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.teamplayersdetail.TeamPlayersDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
